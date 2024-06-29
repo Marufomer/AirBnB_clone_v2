@@ -10,7 +10,7 @@ from sqlalchemy.orm import relationship
 
 
 class State(BaseModel, Base):
-    """Representation of state """
+    """ state Representation  """
     if models.storage_t == "db":
         __tablename__ = 'states'
         name = Column(String(128), nullable=False)
@@ -27,7 +27,7 @@ class State(BaseModel, Base):
     if models.storage_t != "db":
         @property
         def cities(self):
-            """getter for list of city instances related to the state"""
+            """getter for list of city instances related to state"""
             city_list = []
             all_cities = models.storage.all(City)
             for city in all_cities.values():
